@@ -1,67 +1,59 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./Home.css";
+import React from "react";
+import { FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
+import "../pagescss/Home.css";
 
 const Home = () => {
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        axios.get("http://127.0.0.1:5000/users")
-            .then(response => {
-                setUsers(response.data);
-            })
-            .catch(() => {
-                // Handle errors
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-    }, []);
-
     return (
         <div className="home-container">
             {/* Navigation Bar */}
             <nav className="navbar">
-                <span className="company-name">Company Name</span>
+                <span className="company-name">Smart Budget</span>
                 <ul className="nav-links">
-                    <li><a href="#" className="nav-item">Dashboard</a></li>
-                    <li><a href="#" className="nav-item">Budget Tools</a></li>
-                    <li><a href="#" className="nav-item">Financial Basics</a></li>
-                    <li><a href="#" className="nav-item">Support</a></li>
+                    <li><a href="Dashboard" className="nav-item">Dashboard</a></li>
+                    <li><a href="Budget_Tools" className="nav-item">Budget Tools</a></li>
+                    <li><a href="Financial_Basics" className="nav-item">Financial Basics</a></li>
+                    <li><a href="Support" className="nav-item">Support</a></li>
                 </ul>
             </nav>
 
-            {/* Main Content Section */}
-            <div className="content">
-                <div className="left-section">
-                    <h1 className="title">Smart Budgeting</h1>
-                    <p className="description">Take control of your finances with intuitive tools designed for you.</p>
-                    <button className="primary-button" aria-label="Get Started">Get Started</button>
+            {/* Hero Section */}
+            <section className="hero">
+                <div className="hero-content enhanced-hero">
+                    <h1 className="hero-title">Take Control of Your Finances</h1>
+                    <p className="hero-description">Manage your budget smarter with intuitive and easy-to-use financial tools.</p>
+                    <button className="hero-button" aria-label="Get Started">Get Started</button>
+                    {/* Social Media Icons */}
+                    <div className="social-icons">
+                        <a href="#" aria-label="Twitter"><FaTwitter /></a>
+                        <a href="#" aria-label="Instagram"><FaInstagram /></a>
+                        <a href="#" aria-label="TikTok"><FaTiktok /></a>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            {/* User Data Display */}
-            <div className="user-list">
-                {loading ? (
-                    <p className="loading-text">Loading users...</p>
-                ) : users.length > 0 ? (
-                    <ul>
-                        {users.map(user => (
-                            <li key={user.id} className="user-item">
-                                <span className="username">{user.username}</span>
-                                <span className="email">{user.email}</span>
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p className="empty-text"></p>
-                )}
-            </div>
+            {/* Feature Section */}
+            <section className="features">
+                <div className="feature feature-card">
+                    <img src={require("../icons/Analytics.png")} alt="Analytics Icon" className="feature-icon" />
+                    <h3 className="feature-title">Financial Insights</h3>
+                    <p className="feature-description">Gain a deeper understanding of your spending habits with real-time analytics.</p>
+                </div>
+                <div className="feature feature-card">
+                    <img src={require("../icons/security.png")} alt="Security Icon" className="feature-icon" />
+                    <h3 className="feature-title">Secure Transactions</h3>
+                    <p className="feature-description">Keep your financial data safe with industry-leading encryption.</p>
+                </div>
+                <div className="feature feature-card">
+                    <img src={require("../icons/budge.jpg")} alt="Budgeting Icon" className="feature-icon" />
+                    <h3 className="feature-title">Smart Budgeting</h3>
+                    <p className="feature-description">Plan and manage your finances effortlessly with AI-powered tools.</p>
+                </div>
+            </section>
         </div>
     );
 };
 
 export default Home;
+
 
 
