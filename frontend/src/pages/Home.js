@@ -1,6 +1,7 @@
 import React from "react";
 import { FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
 import "../pagescss/Home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -10,9 +11,9 @@ const Home = () => {
                 <span className="company-name">Smart Budget</span>
                 <ul className="nav-links">
                     <li><a href="Dashboard" className="nav-item">Dashboard</a></li>
-                    <li><a href="Budget_Tools" className="nav-item">Budget Tools</a></li>
-                    <li><a href="Financial_Basics" className="nav-item">Financial Basics</a></li>
-                    <li><a href="Support" className="nav-item">Support</a></li>
+                    <li><Link to="/Budget_Tools" className="nav-item">Budget Tools</Link></li>
+                    <li><Link href="Financial_Basics" className="nav-item">Financial Basics</Link></li>
+                    <li><Link to="/Support" className="nav-item">Support</Link></li>
                 </ul>
             </nav>
 

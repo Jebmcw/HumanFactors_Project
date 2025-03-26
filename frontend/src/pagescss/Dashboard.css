@@ -1,0 +1,90 @@
+/* Dashboard.css */
+
+.dashboard-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+.dashboard-container h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #0078d4;
+    margin-bottom: 30px;
+}
+
+.summary {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.summary-card {
+    background-color: #f5f5f5;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #0056a1;
+}
+
+.summary-card p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.widget {
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.widget h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #0078d4;
+}
+
+.widget p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.widget ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.widget li {
+    margin-bottom: 8px;
+}
+
+.widget a {
+    text-decoration: none;
+    color: #0078d4;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.widget a:hover {
+    color: #005fa3;
+}
+
