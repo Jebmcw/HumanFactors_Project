@@ -36,7 +36,21 @@ const Budget_Tools = () => {
         const percentages = values.map(val => ((val / total) * 100).toFixed(1));
         setPercentageData(percentages);
         setShowChart(true);
-        setSuggestions([]); // reset suggestions if previously shown
+        setSuggestions([]);
+
+        // Save to backend
+        fetch("http://localhost:5000/api/budget", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(
+                Object.fromEntries(
+                    Object.entries(formData).map(([k, v]) => [k, parseFloat(v) || 0])
+                )
+            )
+        })
+        .then(res => res.json())
+        .then(data => console.log("Saved to backend:", data))
+        .catch(err => console.error("Error saving:", err));
     };
 
     const generateSuggestions = () => {
@@ -134,5 +148,6 @@ const Budget_Tools = () => {
 };
 
 export default Budget_Tools;
+
 
 

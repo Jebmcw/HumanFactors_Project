@@ -12,7 +12,7 @@ const Home = () => {
                 <ul className="nav-links">
                     <li><a href="Dashboard" className="nav-item">Dashboard</a></li>
                     <li><Link to="/Budget_Tools" className="nav-item">Budget Tools</Link></li>
-                    <li><Link href="Financial_Basics" className="nav-item">Financial Basics</Link></li>
+                    <li><Link to="/Financial_Basics" className="nav-item">Financial Basics</Link></li>
                     <li><Link to="/Support" className="nav-item">Support</Link></li>
                 </ul>
             </nav>
